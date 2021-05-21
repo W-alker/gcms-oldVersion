@@ -1,0 +1,45 @@
+{
+  "name": "gcms",
+  "version": "1.0.0",
+  "description": "垃圾分类管理系统",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/W-alker/GCMS.git"
+  },
+  "author": "Lu xiuyuan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/W-alker/GCMS/issues"
+  },
+  "homepage": "https://github.com/W-alker/GCMS#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "body-parser": "^1.19.0",
+    "express-formidable": "^1.2.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-file-include": "^2.3.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "leanengine": "^3.7.0",
+    "multiparty": "^4.2.2"
+  },
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "gulp-csso": "^4.0.1",
+    "mysql": "^2.18.1",
+    "node-xlsx": "^0.16.1",
+    "nodemailer": "^6.5.0"
+  }
+}

@@ -1,0 +1,1 @@
+"use strict";var express=require("express"),admin=express.Router();module.exports=admin;

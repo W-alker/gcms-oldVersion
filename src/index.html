@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  @@include("./common/template-head.html")
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <main class="gms-login-box col-lg-4 col-md-5 col-sm-6 col-10 offset-1 offset-lg-7 offset-md-6 offset-sm-5">
+    <div class="card">
+      <div class="card-body">
+        <!-- 提示文本框 -->
+        <i class="fa fa-question-circle hint-box-btn text-dark" aria-hidden="true"></i>
+        <div class="gms-login-hint-box">
+          <h5>温馨提示</h5>
+          <p>（1） 所有学员的初始密码为00000或者111111。如果您是第一次登录，请在登录后修改密码，并绑定手机号，以便找回密码。</p>
+          <p>（2） 您首次登录后，七天内可以直接访问主页面，无需重新登录。下次登录我们会尝试为您还原上一次除密码外的登录信息。</p>
+          <p>（3） 用户测试账号：安徽三联学院/1801010001/zs1234/用户</p>
+          <p>（4） 管理员测试账号：安徽三联学院/18001111/ls5678/管理员</p>
+        </div>
+
+        <h3 class='card-title'>登录</h3>
+        <p>欢迎登录垃圾分类管理系统!</p>
+        <form class="gms-login-form" action="./login" method="POST">
+          <div class="form-group">
+            <label for=""><i class="fa fa-graduation-cap"></i>学校：</label>
+            <input type="text" class="btn form-control select-school-btn" name="SName" value="安徽三联学院">
+            <i class="fa fa-chevron-right" aria-hidden="true" data-toggle="modal"
+              data-target="#gms-selectSchool-box"></i>
+          </div>
+          <div class="form-group">
+            <label for=""><i class="fa fa-user-circle-o"></i>学号/工号：</label>
+            <input type="text" name="idCode" placeholder="请输入学号/工号" class="form-control input-idCode">
+          </div>
+          <!-- 信息提示框 -->
+          <div class="alert alert-warning">
+            学号/工号不存在！
+          </div>
+          <div class="form-group" style="margin-top: 16px;">
+            <label for=""><i class="fa fa-key"></i>密码：</label>
+            <input type="password" name="password" id="" class="form-control input-pwd" placeholder="请输入密码" required>
+          </div>
+          <!-- 信息提示框 -->
+          <div class="alert alert-danger">
+            您的密码有误！
+          </div>
+          <div class="form-group" style="margin-top: 30px;">
+            <div class="custom-control custom-radio custom-control-inline" style="margin-right: 30px;">
+              <input type="radio" class="custom-control-input" id="admin" name="identiy" required>
+              <label class="custom-control-label" for="admin">管理员</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" class="custom-control-input" id="user" name="identiy" required>
+              <label class="custom-control-label" for="user">用户</label>
+            </div>
+          </div>
+          <!-- 信息提示框 -->
+          <div class="alert alert-info">
+            请选择您的身份！
+          </div>
+          <button type="submit" class="btn btn-primary w-100 login-submit" onclick="return false">登录</button>
+        </form>
+        <div style="padding: 16px 0 8px 0;">
+          <a href="javascript:;" data-toggle="modal" data-target="#gms-resetPwd-box">忘记密码？</a>
+          <a href="javascript:;" class="rememberPwd"><i class="fa fa-circle-o"></i>自动登录</a>
+        </div>
+      </div>
+
+
+    </div>
+  </main>
+
+  <!-- 寻找学校 -->
+  <!-- 模态框 -->
+  <div class="modal fade" id="gms-selectSchool-box">
+    <div class="modal-dialog">
+      <div class="modal-content" class="gms-selectSchool-box-cont">
+        <!-- 模态框头部 -->
+        <div class="modal-header">
+          <h4 class="modal-title">选择学校</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- 模态框主体 -->
+        <div class="modal-body">
+          <input type="search" name="" id="" class="form-control search-schoolName" placeholder="搜索学校"
+            style="margin-bottom: 15px;">
+          <div class="schoolName-list-box">
+            <p>学校名称加载中...</p>
+          </div>
+        </div>
+        <!-- 模态框底部 -->
+        <div class="modal-footer">
+          <span>您的学校：<strong class="chooseSchool-name">安徽三联学院</strong></span>
+          <button type="button" class="btn btn-primary chooseSchool-btn" data-dismiss="modal"
+            style="float: left;">确定</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 重置密码 -->
+  <!-- 模态框 -->
+  <div class="modal fade" id="gms-resetPwd-box">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- 模态框头部 -->
+        <div class="modal-header">
+          <h4 class="modal-title">找回密码</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- 模态框主体 -->
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="">学校：</label>
+              <input type="text" class="btn form-control select-school-btn" name='SName' value="安徽三联学院">
+              <i class="fa fa-chevron-right" aria-hidden="true" data-toggle="modal"
+                data-target="#gms-selectSchool-box"></i>
+            </div>
+            <div class="form-group">
+              <label>学号/工号:</label>
+              <input type="text" class="form-control input-idCode" name="idCode" placeholder="请输入您的学号/工号" required>
+            </div>
+            <!-- 信息提示框 -->
+            <div class="alert alert-warning"></div>
+            <div class="form-group container">
+              <label style="margin-left: -15px;">绑定的邮箱：</label>
+              <div class="row">
+                <input type="email" class="form-control col-8 col-sm-9 input-email" name="email" placeholder="请输入您绑定的邮箱" required
+                  autocomplete>
+                <a href="javascript:;" class="col-4 col-sm-3 get-verifyCode-link">获取验证码</a>
+              </div>
+            </div>
+            <div class="form-group container">
+              <label style="margin-left: -15px;">输入验证码：</label>
+              <div class="row">
+                <input type="text" class="form-control col-8 col-sm-9" name="verifyCode" placeholder="请输入您收到的验证码"
+                  required>
+              </div>
+            </div>
+            <!-- 信息提示框 -->
+            <div class="alert alert-warning"></div>
+            <div class="form-group container">
+              <label style="margin-left: -15px;">新密码(请牢记您的新密码)：</label>
+              <div class="row">
+                <input type="password" class="resetPwd-text form-control col-8 col-sm-9 input-pwd" name="newPwd"
+                  placeholder="请输入新密码" required>
+                <div class="toggleEye col-4 col-sm-3"><i class="fa fa-eye-slash"></i></div>
+              </div>
+            </div>
+            <!-- 信息提示框 -->
+            <div class="alert alert-warning"></div>
+            <button type="submit" class="btn btn-primary" onclick="return false">重置密码</button>
+          </form>
+
+        </div>
+
+        <!-- 模态框底部 -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  </div>
+</body>
+<script src="./js/common.js"></script>
+<script src="./js/index.js"></script>
+
+</html>

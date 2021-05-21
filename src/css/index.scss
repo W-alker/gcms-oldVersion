@@ -1,0 +1,154 @@
+body {
+  background-color: rgb(109, 201, 255);
+  overflow: hidden;
+}
+//BootStrap蓝色基色
+$blueColor: #1383fa;
+//灰色基色
+$grayColor: rgb(165, 167, 168);
+//浅灰
+$lightGray: rgb(211, 211, 211);
+//BootStrap边框灰色
+$borderGray: #ced4da;
+
+//信息提示框全部隐藏
+.alert{
+  display: none;
+}
+//登录框
+.gms-login-box {
+  margin-top: 50vh;
+  transform: translateY(-50%);
+}
+.gms-login-box .card {
+  position: relative;
+  padding: 10px 20px;
+  overflow: hidden;
+  //提示文本框
+  //开启按钮
+  .fa-question-circle {
+    z-index: 11;
+    position: absolute;
+    right: 30px;
+    font-size: x-large;
+    cursor: pointer;
+    &:hover {
+      color: $blueColor;
+    }
+  }
+  .gms-login-hint-box {
+    display: none;
+    z-index: 10;
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    right: 30px;
+    margin-top: -10px;
+    padding: 15px;
+    background-color: rgb(243, 243, 243);
+  }
+  h3 {
+    color: $blueColor;
+  }
+  p {
+    color: $grayColor;
+    margin-bottom: 40px;
+  }
+  i {
+    margin-right: 10px;
+    color: $blueColor;
+    font-size: large;
+  }
+  input {
+    color: $blueColor;
+  }
+  button[type="submit"] {
+    margin-top: 20px;
+    border-radius: 40px;
+  }
+  a {
+    color: $grayColor;
+  }
+  .rememberPwd {
+    float: right;
+    i{
+      margin-right: 4px;
+      color:$grayColor;}
+  }
+}
+//寻找学校模态框
+#gms-selectSchool-box {
+  z-index: 1060;
+  .modal-footer {
+    position: relative;
+    span{
+      position: absolute;
+      left: 1rem;
+      color:$grayColor;
+      strong{
+        color:$blueColor;
+      }
+    }
+  }
+}
+.schoolName-list-box {
+  max-height: 60vh;
+  overflow-y: scroll;
+  thead {
+    background-color: $lightGray;
+  }
+
+}
+
+//选择学校按钮共同设置
+#gms-resetPwd-box,
+.gms-login-box > .card {
+  //调整箭头位置
+  .form-group:first-child {
+    position: relative;
+  }
+  i.fa-chevron-right {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 38px;
+    padding-right: 10px;
+    line-height: 38px;
+    color: $grayColor;
+    cursor: pointer;
+    &::before {
+      float: right;
+    }
+  }
+  //选择学校按钮
+  .select-school-btn {
+    color: $blueColor;
+    text-align: start;
+    border: $borderGray 1px solid;
+  }
+}
+//重置密码模态框
+#gms-resetPwd-box {
+}
+
+.get-verifiCode-link {
+  display: inline-block;
+  line-height: 38px;
+  max-height: 38px;
+  overflow: hidden;
+  padding: 0 0 0 15px;
+}
+.toggleEye {
+  line-height: 38px;
+  text-align: center;
+  color: $grayColor;
+  font-size: x-large;
+  cursor: pointer;
+  &:hover {
+    color: $blueColor;
+  }
+  .fa-eye {
+    color: $blueColor;
+  }
+}

@@ -1,0 +1,16 @@
+@import "common.css";
+
+[data-index="1"]{
+    display: block;
+    .process-box{
+        .btn-outline-primary{
+            margin-left: 2em;
+            width: 8em;
+        }
+    }
+    .data-box{
+        .pagination{
+            float: right;
+        }
+    }
+}

@@ -1,0 +1,1 @@
+"use strict";var expressJwt=require("express-jwt"),jwt=require("jsonwebtoken"),express=require("express"),app=express(),scrict="cw923hr998chwh22sdfbhj",token={};token.scrict=scrict,token.createToken=function(e){return e.curtime=Date.now(),"Bearer "+jwt.sign(e,scrict,{expiresIn:259200})},module.exports=token;
